@@ -14,11 +14,15 @@ const TodoItem = ({todo, dispatch}) => {
     });
   };
 
-  const handleDelete = (id) => {
-    dispatch({
-      type: 'DELETE_TODO',
-      payload: {id: todo.id},
-    });
+  const handleDelete = (todo) => {
+    if (todo.completed) {
+      dispatch({
+        type: 'DELETE_TODO',
+        payload: todo,
+      });
+    } else {
+      return;
+    }
   };
 
   const handleClickOnTodo = () => {
@@ -85,7 +89,7 @@ const TodoItem = ({todo, dispatch}) => {
           handleCloseEdit={handleCloseEdit}
         />
       )}
-      <IconButton onClick={() => handleDelete(todo._id)} color='secondary'>
+      <IconButton onClick={() => handleDelete(todo)} color='secondary'>
         <Delete />
       </IconButton>
     </Paper>

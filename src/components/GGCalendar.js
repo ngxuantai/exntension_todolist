@@ -7,28 +7,38 @@ import {
   Button,
   Icon,
 } from '@material-ui/core';
-import {Delete, CalendarToday, NotificationsActive} from '@material-ui/icons';
+// import RefreshIcon from '@mui/icons-material/Refresh';
+import {
+  Delete,
+  CalendarToday,
+  NotificationsActive,
+  Refresh,
+} from '@material-ui/icons';
 import {render} from '@testing-library/react';
-import '../css/Home.css';
+import '../css/GGCalendar.css';
 import FormAddTodo from './FormAddTodo';
 import TodoItem from './TodoItem';
 import todosReducer from '../reducer/todoReducer';
 
-const Home = () => {
+const GGCalendar = () => {
+  const [type, setType] = useState('ggcalendar');
+
   // Check localStorage for initial todos
   const savedTodos = localStorage.getItem('todos');
   const initialTodos = savedTodos ? JSON.parse(savedTodos) : [];
-  const normalTodos = initialTodos.filter((todo) => todo.type === 'normal');
   const [todos, dispatch] = useReducer(todosReducer, initialTodos);
 
   const [currentTask, setCurrentTask] = useState('');
   const [currentDescription, setCurrentDescription] = useState('');
   const [currentDeadline, setCurrentDeadline] = useState('');
-  const [type, setType] = useState('normal');
   const [selectedId, setSelectedId] = useState('');
   const [closeForm, setCloseForm] = useState(true);
   const [textBar, setTextBar] = useState('');
   const [notifiedForm, setNotifiedForm] = useState(false);
+
+  const handleRefreshData = () => {};
+
+  const handleGetData = () => {};
 
   return (
     <div className='App'>
@@ -37,11 +47,24 @@ const Home = () => {
         className='paper-container'
         style={{backgroundColor: 'lightgrey'}}
       >
+        <div className='div-button'>
+          <button
+            className='data-button'
+            type='button'
+            onClick={handleRefreshData}
+            style={{display: 'flex'}}
+          >
+            Refresh <Refresh />
+          </button>
+          <button className='data-button' type='button' onClick={handleGetData}>
+            Get Data
+          </button>
+        </div>
         <FormAddTodo todos={todos} type={type} dispatch={dispatch} />
         <div
           className='scroll-container'
           style={{
-            maxHeight: '290px',
+            maxHeight: '240px',
           }}
         >
           {todos.map((todo) => {
@@ -56,4 +79,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GGCalendar;

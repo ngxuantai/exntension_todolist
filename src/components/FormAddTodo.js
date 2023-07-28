@@ -84,14 +84,9 @@ const FormAddTodo = ({todos, type, dispatch}) => {
         onChange={handleChangeDeadline}
       />
       <div
-        style={{minHeight: '50px', display: 'flex', justifyContent: 'flex-end'}}
+      // style={{minHeight: '50px', display: 'flex', justifyContent: 'flex-end'}}
       >
-        <button
-          className='addbtn'
-          variant='outlined'
-          style={{margin: '8px', backgroundColor: 'white'}}
-          type='submit'
-        >
+        <button className='addbtn' variant='outlined' type='submit'>
           Add Todo
         </button>
       </div>

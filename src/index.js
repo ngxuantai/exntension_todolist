@@ -4,6 +4,7 @@ import './index.css';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
+import GGCalendar from './components/GGCalendar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,7 +30,7 @@ root.render(
 
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/ggcalendar' element={<GGCalendar />} /> */}
+        <Route path='/ggcalendar' element={<GGCalendar />} />
       </Routes>
     </Router>
   </React.StrictMode>

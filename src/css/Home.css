@@ -9,15 +9,7 @@
   text-align: center;
 }
 
-.home-container {
-  margin-top: 50px;
-  width: 400px;
-  height: 550px;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.home-container > input {
+/* .home-container input {
   height: 50px;
   width: 80%;
   margin: 8px;
@@ -34,9 +26,9 @@
 .home-container > input::placeholder {
   color: #666;
   opacity: 0.8;
-}
+} */
 
-.addbtn {
+/* .addbtn {
   border: 2px solid #323232;
   border-radius: 5px;
   box-shadow: 4px 4px #323232;
@@ -49,38 +41,9 @@
 .addbtn:active {
   box-shadow: 0px 0px #323232;
   transform: translate(3px, 3px);
-}
+} */
 
-.todo_container {
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 0.1fr 2.8fr 0.1fr;
-  border: 1px solid #323232;
-}
-
-.scroll-container {
-  overflow: auto;
-}
-
-.scroll-container::-webkit-scrollbar {
-  padding-bottom: 5px;
-  width: 8px; /* Độ rộng của thanh trượt */
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: #888; /* Màu nền của thanh trượt */
-  border-radius: 4px; /* Độ cong viền của thanh trượt */
-}
-
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Màu nền của thanh trượt khi hover */
-}
-
-.scroll-container::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Màu nền của vùng track */
-}
-
-.form-overlay {
+/* .form-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,4 +76,4 @@
 .deadline {
   font-size: 15px;
   color: #666;
-}
+} */
