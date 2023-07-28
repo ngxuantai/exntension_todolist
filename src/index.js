@@ -18,7 +18,9 @@ root.render(
         }}
       >
         <div>
-          <a className='navbar-brand'>MyTodo</a>
+          <a className='navbar-brand' style={{fontSize: '25px'}}>
+            MyTodo
+          </a>
           <Link to='/' className='navbar-link'>
             Home
           </Link>
@@ -29,7 +31,7 @@ root.render(
       </nav>
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='*' element={<Home />} />
         <Route path='/ggcalendar' element={<GGCalendar />} />
       </Routes>
     </Router>
